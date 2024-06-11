@@ -4,3 +4,6 @@
 /bin
 /obj
 /sources
+/idea
+/cmake-build-debug
+CMakeLists.txt
