@@ -2,49 +2,12 @@
 #include <cstddef>
 #include <utility>
 #include "cpp-single-linked-list.h"
+#include <iostream>
+
+
 
 
 using namespace std;
-
-
-template <typename Type>
-void swap(SingleLinkedList<Type>& lhs, SingleLinkedList<Type>& rhs) noexcept{
-   lhs.swap(rhs);
-}
-
-template <typename Type>
-bool operator==(const SingleLinkedList<Type>& lhs, const SingleLinkedList<Type>& rhs){
-   return std::equal(lhs.begin(),lhs.end(),rhs.begin(),rhs.end());
-
-}
-
-template <typename Type>
-bool operator!=(const SingleLinkedList<Type>& lhs, const SingleLinkedList<Type>& rhs){
-   return  !(lhs == rhs);
-}
-
-template <typename Type>
-bool operator<(const SingleLinkedList<Type>& lhs, const SingleLinkedList<Type>& rhs){
-  return  std::lexicographical_compare(lhs.begin(),lhs.end(),rhs.begin(),rhs.end());
-}
-
-template <typename Type>
-bool operator<=(const SingleLinkedList<Type>& lhs, const SingleLinkedList<Type>& rhs){
-    return  ((lhs < rhs) || !(rhs < lhs));   //((lhs < rhs) || !(rhs < lhs));    //(lhs == rhs));
-}
-
-template <typename Type>
-bool operator>(const SingleLinkedList<Type>& lhs, const SingleLinkedList<Type>& rhs){
-    return !(lhs < rhs);
-}
-
-template <typename Type>
-bool operator>=(const SingleLinkedList<Type>& lhs, const SingleLinkedList<Type>& rhs){
-    return !((lhs < rhs) || (rhs < lhs)); //(lhs==rhs)
-}
-
-
-
 
 void Test1() {
     // Шпион, следящий за своим удалением
@@ -349,6 +312,7 @@ void Test3() {
             assert(second.begin() == old_second_begin);
             assert(first.GetSize() == old_first_size);
             assert(second.GetSize() == old_second_size);
+
         }
     }
 
